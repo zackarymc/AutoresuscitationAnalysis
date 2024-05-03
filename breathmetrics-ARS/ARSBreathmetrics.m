@@ -663,6 +663,7 @@
                     strcmp(Bm.dataType,'rodentAirflow')
                 
                 % these must be recomputed if onsets have changed
+                Bm.findOnsetsAndPauses(verbose);
                 Bm.findInhaleAndExhaleOffsets(verbose);
                 Bm.findBreathAndPauseDurations();
                 Bm.findInhaleAndExhaleVolumes(verbose);
