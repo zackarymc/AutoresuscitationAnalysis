@@ -86,7 +86,7 @@ end
 
 % cycle through each peak-peak window of respiration data
 for THIS_BREATH = 1:length(myPeaks)-1
-    
+
     % Find next inhale onset and pause
     if myTroughs(THIS_BREATH) == 1
 
@@ -165,11 +165,11 @@ for THIS_BREATH = 1:length(myPeaks)-1
 
     if myTroughs(THIS_BREATH) == 1
 
-       exhaleOnsets(1, THIS_BREATH) = 1;
+        exhaleOnsets(1, THIS_BREATH) = 1;
 
     else
-         % Find Next Exhale
-         % troughs always follow peaks
+        % Find Next Exhale
+        % troughs always follow peaks
         EXHALE_WINDOW = resp(myPeaks(THIS_BREATH):myTroughs(THIS_BREATH));
         CUSTOM_BINS=linspace(min(EXHALE_WINDOW),max(EXHALE_WINDOW),nBINS);
         [AMPLITUDE_VALUES, WINDOW_BINS] = hist(EXHALE_WINDOW, CUSTOM_BINS);
@@ -226,7 +226,7 @@ for THIS_BREATH = 1:length(myPeaks)-1
         end
     end
 
-    end
+end
 
 
 % last exhale onset is also special because it's not in a peak-peak cycle
