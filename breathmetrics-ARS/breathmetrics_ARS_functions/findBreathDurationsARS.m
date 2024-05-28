@@ -18,9 +18,9 @@ end
 % calculate exhale durations
 for e=1:length(Bm.exhaleOnsets)
     if ~isnan(Bm.exhaleOffsets(e))
-        % If exhaleOnest == 1, no exhale for this breath so exhaleDuration
-        % == nan
-        if Bm.exhaleOnsets(e) == 1
+       
+        if Bm.exhaleOnsets(e) == 1 
+            % If exhaleOnest == 1, no exhale for this breath so exhaleDuration = nan
             exhaleDurations(e) = nan;
         else
             exhaleDurations(e) = Bm.exhaleOffsets(e)-Bm.exhaleOnsets(e);

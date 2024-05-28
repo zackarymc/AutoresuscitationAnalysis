@@ -28,8 +28,8 @@ swTroughVect = zeros(1, size(paddedResp, 2));
 
 % peaks and troughs must exceed this value. Sometimes algorithm finds mini
 % peaks in flat traces
-peakThreshold = mean(resp(1,:)) + std(resp(1,:)) / 1.25;
-troughThreshold = mean(resp(1,:)) - std(resp(1,:)) / 1.25;
+peakThreshold = mean(resp(1,:)) + std(resp(1,:)) / 1.25; % Changed from std/2 to std/1.25 
+troughThreshold = mean(resp(1,:)) - std(resp(1,:)) / 1.25; % Changed from std/2 to std/1.25 
 
 % shifting window to be unbiased by starting point
 SHIFTS = 1:3;
@@ -118,7 +118,8 @@ end
 correctedPeaks = [];
 correctedTroughs = [];
 
-packingBreaths = zeros(length(peakInds),1);
+packingBreaths = zeros(length(peakInds),1); % 
+
 packInd = 1;
 SIMPLE_ZERO_CROSS = mean(paddedResp);
 
