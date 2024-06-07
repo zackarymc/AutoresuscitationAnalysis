@@ -363,8 +363,11 @@
             
             % set nPeaks to nTroughs
             if simplify
-                putativePeaks = putativePeaks(1:length(putativeTroughs));
-                % putativeTroughs=putativeTroughs(1:length(putativePeaks));
+                if length(putativeTroughs)>length(putativePeaks)
+                    putativeTroughs=putativeTroughs(1:length(putativePeaks));
+                else
+                    putativePeaks = putativePeaks(1:length(putativeTroughs));
+                end
             end
             
             % The extrema represent the peak flow rates of inhales and 
